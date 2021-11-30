@@ -1,9 +1,9 @@
 var currentDayEl = document.getElementById("currentDay")
-var now = moment().year(year).month(month).date(day);
-var containerEl = document.getElementById("scheduleContainer")
+var now = moment().format("dddd, MMMM DD, YYYY");
+var containerEl = document.getElementById("schedule")
 
-function currentDate(){
-    $(currentDayEl).text(now);
-}
+$(currentDayEl).text(now);
 
-currentDate();
+console.log(moment().hours());
+
+
