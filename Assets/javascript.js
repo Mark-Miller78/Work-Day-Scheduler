@@ -12,6 +12,16 @@ $(".saveBtn").on("click", function(){
     localStorage.setItem(hour, text);
 });
 
+var getItem = function(){
+    $(".description").each(function(){
+        var id = $(this).parent(".time-block").attr("id");
+        var value = localStorage.getItem(id);
+
+        $(this).val(value);
+        console.log(id);
+    });
+};
+
 var hourTracker = function(){
     var rightNow = moment().hour();
 
@@ -39,3 +49,4 @@ var hourTracker = function(){
     });
 };
 hourTracker();
+getItem();
