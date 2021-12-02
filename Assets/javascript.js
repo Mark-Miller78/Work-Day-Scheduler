@@ -4,7 +4,13 @@ var containerEl = document.getElementById("schedule")
 
 $(currentDayEl).text(now);
 
+$(".saveBtn").on("click", function(){
+    var text = $(this).siblings(".description").val();
+    var hour = $(this).parent().attr("id");
+    console.log(hour, text);
 
+    localStorage.setItem(hour, text);
+});
 
 var hourTracker = function(){
     var rightNow = moment().hour();
