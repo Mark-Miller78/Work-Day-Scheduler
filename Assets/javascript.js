@@ -10,7 +10,7 @@ $(".saveBtn").on("click", function(){
     //...gets the input val associated with it and the id of the hour
     var text = $(this).siblings(".description").val();
     var hour = $(this).parent().attr("id");
-    console.log(hour, text);
+    // console.log(hour, text);
 
     //saves to local hour
     localStorage.setItem(hour, text);
@@ -26,9 +26,21 @@ var getItem = function(){
 
         //sets value to what is pulled from local storage
         $(this).val(value);
-        console.log(id);
+        // console.log(id);
     });
 };
+
+//when delete button is pressed
+$(".deleteBtn").on("click", function(){
+    //sets textarea value to ""
+    var text = $(this).siblings(".description");
+    text.val("");
+
+    //removes from localstorage based on ID
+    var id = $(this).parent(".time-block").attr("id");
+    localStorage.removeItem(id);
+
+});
 
 var hourTracker = function(){
     //sets rightNow to current hour
